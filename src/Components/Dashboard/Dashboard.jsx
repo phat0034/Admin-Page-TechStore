@@ -16,7 +16,7 @@ import {
   Cell
 } from 'recharts'
 import React, { useEffect, useState } from 'react'
-import { assets } from '../../../../frontend/src/assets/assets'
+import { assets } from '../../../frontend/frontend/src/assets/assets'
 import Popup from 'reactjs-popup'
 import '../../App.css'
 import { useNavigate, useSearchParams, useParams,Link } from 'react-router-dom'
