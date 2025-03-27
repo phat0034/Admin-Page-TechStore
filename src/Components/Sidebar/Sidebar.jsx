@@ -1,6 +1,6 @@
 import React from 'react'
 import { assets } from '../../../../frontend/src/assets/assets'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation,Link } from 'react-router-dom'
 import { useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 function SideBar () {
