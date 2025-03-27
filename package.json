@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "homepage": "https://phat0034.github.io/Admin-Page-TechStore/",
+=======
+  "homepage": "https://phat0034.github.io/Admin-Page-TechStore",
+>>>>>>> 893f9fbda794c531704947978830f69e02df0cfe
   "name": "admin",
   "private": true,
   "version": "0.0.0",
