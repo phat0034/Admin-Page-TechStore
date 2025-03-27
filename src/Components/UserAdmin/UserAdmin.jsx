@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { assets } from '../../../frontend/frontend/src/assets/assets'
+import { assets } from '../../assets/assets'
 import Popup from 'reactjs-popup'
 import '../../App.css'
 import { useNavigate, useSearchParams, useParams } from 'react-router-dom'
@@ -11,7 +11,7 @@ function UserAdmin () {
   const [addressData, setAdressData] = useState(false)
   const fetchUserData = async () => {
     try {
-      const res = await fetch('${API_BASE_URL}/getuseradmin', {
+      const res = await fetch(`${API_BASE_URL}/getuseradmin`, {
         method: 'GET'
       })
       const data = await res.json()

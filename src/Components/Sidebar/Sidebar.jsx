@@ -1,5 +1,5 @@
 import React from 'react'
-import { assets } from '../../../frontend/frontend/src/assets/assets'
+import { assets } from '../../assets/assets'
 import { Routes, Route, useLocation,Link } from 'react-router-dom'
 import { useSearchParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'

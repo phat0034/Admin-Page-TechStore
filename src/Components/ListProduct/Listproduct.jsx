@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { assets } from '../../../frontend/frontend/src/assets/assets'
+import { assets } from '../../assets/assets'
 import Popup from 'reactjs-popup'
 import '../../App.css'
 import { useNavigate, useSearchParams, useParams,Link } from 'react-router-dom'
@@ -38,7 +38,7 @@ function Listproduct () {
   const fetchData = async page => {
     try {
       const response = await fetch(
-        `${API_BASE_URL}/allproductpage?page=${page}&p=100`,
+        `${API_BASE_URL}/allproductpage?page=${page}&p=20`,
         {
           method: 'Post'
         }
@@ -396,7 +396,9 @@ function Listproduct () {
                 ))}
               </tbody>
             </table>
-            {!query && (
+           
+          </div>
+          {!query && (
               <div className='flex justify-center gap-2 my-4'>
                 <p
                   className='border py-1 px-2 rounded-md hover:bg-black hover:text-white cursor-pointer'
@@ -447,7 +449,6 @@ function Listproduct () {
                 </p>
               </div>
             )}
-          </div>
         </div>
       </div>
     </>

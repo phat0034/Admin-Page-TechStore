@@ -16,13 +16,13 @@ import {
   Cell
 } from 'recharts'
 import React, { useEffect, useState } from 'react'
-import { assets } from '../../../frontend/frontend/src/assets/assets'
+import { assets } from '../../assets/assets'
 import Popup from 'reactjs-popup'
 import '../../App.css'
-import { useNavigate, useSearchParams, useParams,Link } from 'react-router-dom'
+import { useNavigate, useSearchParams, useParams, Link } from 'react-router-dom'
 export default function Dashboard () {
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL_API; // Lấy từ .env
-  const API_BASE = import.meta.env.VITE_API_BASE_URL; // Lấy từ .env
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL_API // Lấy từ .env
+  const API_BASE = import.meta.env.VITE_API_BASE_URL // Lấy từ .env
   const [typeSold, setTypeSold] = useState([])
   const [recentlyOrder, setRecentlyOrder] = useState([])
   const [dataDashboard, setDataDashboard] = useState([
@@ -62,7 +62,7 @@ export default function Dashboard () {
   }
   const calRevenue = async () => {
     try {
-      const res = await fetch(`${API_BASE}/calrevenue`, {
+      const res = await fetch(`${API_BASE_URL}/calrevenue`, {
         method: 'GET'
       })
       const data = await res.json()
@@ -77,7 +77,7 @@ export default function Dashboard () {
   }
   const countTypeSold = async () => {
     try {
-      const res = await fetch(`${API_BASE}/typesold`, {
+      const res = await fetch(`${API_BASE_URL}/typesold`, {
         method: 'GET'
       })
       const data = await res.json()
@@ -94,7 +94,7 @@ export default function Dashboard () {
   }
   const countUsers = async () => {
     try {
-      const res = await fetch(`${API_BASE}/countuser`, {
+      const res = await fetch(`${API_BASE_URL}/countuser`, {
         method: 'GET'
       })
       const data = await res.json()
@@ -106,12 +106,9 @@ export default function Dashboard () {
   }
   const revenueOfYear = async () => {
     try {
-      const res = await fetch(
-        `${API_BASE}/revenuedayyear?d=year`,
-        {
-          method: 'GET'
-        }
-      )
+      const res = await fetch(`${API_BASE_URL}/revenuedayyear?d=year`, {
+        method: 'GET'
+      })
       const data = await res.json()
       updatePreData('Revenue Of The Year', data[0].total) // Cập nhật state
     } catch (error) {
@@ -120,12 +117,9 @@ export default function Dashboard () {
   }
   const revenueOfDay = async () => {
     try {
-      const res = await fetch(
-        `${API_BASE}/revenuedayyear?d=day`,
-        {
-          method: 'GET'
-        }
-      )
+      const res = await fetch(`${API_BASE_URL}/revenuedayyear?d=day`, {
+        method: 'GET'
+      })
       const data = await res.json()
       updatePreData('Revenue Today', data[0].total) // Cập nhật state
     } catch (error) {
@@ -134,7 +128,7 @@ export default function Dashboard () {
   }
   const countOrder = async () => {
     try {
-      const res = await fetch(`${API_BASE}/countsold`, {
+      const res = await fetch(`${API_BASE_URL}/countsold`, {
         method: 'GET'
       })
       const data = await res.json()
@@ -145,12 +139,11 @@ export default function Dashboard () {
   }
   const recentlyOrders = async () => {
     try {
-      const res = await fetch(`${API_BASE}/checkrencently`, {
+      const res = await fetch(`${API_BASE_URL}/checkrencently`, {
         method: 'GET'
       })
       const data = await res.json()
       setRecentlyOrder(data)
-      console.log(recentlyOrder)
     } catch (error) {
       console.error(error)
     }
